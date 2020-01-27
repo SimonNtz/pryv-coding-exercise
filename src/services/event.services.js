@@ -17,22 +17,15 @@ const saveEvent = async function(urlAccountInfo, eventData){
             `https://${urlAccountInfo.username}.pryv.me/events?auth=${urlAccountInfo.token}`,
             {
                 method: 'post',
-                body:    JSON.stringify(createEventFields(eventData)),
+                body:    JSON.stringify({"streamId": "a",
+                                        "type": "exercise-1/streams",
+                                        "content":eventData}),
                 headers: { 'Content-Type': 'application/json' }
             });
         return(await resp.json());
     } catch(e) {
-        throw new Error(e.message);
+        throw (e);
     };
 }; 
-
-function createEventFields(streamData){
-
-    let eventBody = {"streamId": "a",
-                    "type": "exercise-1/streams",
-                    "content": streamData[0].streams.concat(streamData[1].streams)
-                    };
-    return eventBody;
-};
 
 module.exports = saveEvent;

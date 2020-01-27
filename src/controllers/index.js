@@ -4,22 +4,23 @@
  */
 
  // Required services
-const { fetchStreams , saveEvent} = require('../services');;
+const { fetchStream , saveEvent} = require('../services');
+const _async = require('async');
 
 // This function is chaining two asynchronous calls to services.
 const saveStreamstoEvent = async function(req, res, next)  {
-    const {source, backup} = req.body;
+    const userAccounts = (({source, backup}) => ({source, backup}))(req.body);
     try {
-      const streams = await fetchStreams(source, backup);
-      const eventResp = await saveEvent(backup, streams);
+      const streamsResp  = await _async.concatLimit(userAccounts, 2, fetchStream);
+      const eventResp = await saveEvent(userAccounts.backup,
+        streamsResp[0].streams.concat(streamsResp[1].streams));
       res.send(eventResp);
-      next();
-    } catch(e) {
+    } catch(e){
       console.log(e.message);
-      res.sendStatus(500) && next(error);
+      res.sendStatus(500);
     };
-  };
-   
+};
+
 module.exports = {
     saveStreamstoEvent
 };

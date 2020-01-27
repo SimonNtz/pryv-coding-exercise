@@ -3,6 +3,6 @@
  */
 
 module.exports = {
-    fetchStreams : require('./stream.services'),
+    fetchStream : require('./stream.services'),
     saveEvent : require('./event.services')
 };

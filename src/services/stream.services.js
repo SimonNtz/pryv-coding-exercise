@@ -9,22 +9,22 @@
  */
 const fetch = require('node-fetch');
 
+
+
 // After requests execution this function is waiting on four promises in total.
 // The first two promises received have each another nested promise.
-async function fetchStreams(sourceAccount, backupAccount) {
+const fetchStream = async function (userAccount){
     try {
-        let streamsArray = await Promise.all([
-            fetch(`https://${sourceAccount.username}.pryv.me/streams?auth=${sourceAccount.token}`),
-            fetch(`https://${backupAccount.username}.pryv.me/streams?auth=${backupAccount.token}`),
-        ]);
-        let streamsJson = await Promise.all([
-            streamsArray[0].json(),
-            streamsArray[1].json()
-        ]);
-        return streamsJson;
+        const streamResponse = await fetch( 
+            `https://${userAccount.username}.pryv.me/streams?auth=${userAccount.token}`);
+        return(await streamResponse.json());
+        // throw new Error('whoops');
     } catch(e) {
-        throw new Error(e.message);
-    };
+        console.log('inner fn' + e.message);
+        throw(e);
+    };  
 };
 
-module.exports = fetchStreams;
+
+
+module.exports = fetchStream;
