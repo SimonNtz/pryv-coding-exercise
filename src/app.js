@@ -1,5 +1,6 @@
 /**
- * Script configuring and running an express.js server 
+ * Script configuring and running the express server 
+ * which routes the incoming HTTP requests to a router.  
 */
 
 /**
@@ -32,7 +33,7 @@ app.use(express.json())
 app.use('/', routes);
 
 // Start the server
-app.listen(port, domain, function(){
+app.listen(port, domain, function () {
     console.log(`app listening on http://${domain}:${port}`);
 });
 
