@@ -1,15 +1,15 @@
 /**
- * Script configuring and running an express.js server 
+ * Script configuring and running an express.js server
 */
 
 /**
  * Required External Modules
  */
 
-const express = require("express");
-const routes = require('./routes')
+const express = require('express');
+const routes = require('./routes');
 
-require("dotenv").config();
+require('dotenv').config();
 
 /**
  * App Variables
@@ -23,7 +23,7 @@ const domain = process.env.DOMAIN || 'localhost';
  *  Middlewares
  */
 
-app.use(express.json())
+app.use(express.json());
 
 /**
  * Routes Definitions
@@ -35,5 +35,3 @@ app.use('/', routes);
 app.listen(port, domain, function(){
     console.log(`app listening on http://${domain}:${port}`);
 });
-
-
