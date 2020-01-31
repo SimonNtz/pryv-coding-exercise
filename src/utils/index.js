@@ -1,0 +1,3 @@
+function intersectStreams(streams){
+
+};

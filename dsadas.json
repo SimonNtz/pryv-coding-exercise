@@ -1,0 +1,81 @@
+{
+    "event": {
+        "streamId": "a",
+        "type": "exercise-1/streams",
+        "content": [
+            {
+                "name": "A",
+                "created": 1576492959.356,
+                "createdBy": "ck48ave6400c51ed33xxwzz0r",
+                "modified": 1576492959.356,
+                "modifiedBy": "ck48ave6400c51ed33xxwzz0r",
+                "id": "a",
+                "children": [
+                    {
+                        "name": "B",
+                        "parentId": "a",
+                        "created": 1576492959.364,
+                        "createdBy": "ck48ave6400c51ed33xxwzz0r",
+                        "modified": 1576492959.364,
+                        "modifiedBy": "ck48ave6400c51ed33xxwzz0r",
+                        "id": "b",
+                        "children": []
+                    },
+                    {
+                        "name": "C",
+                        "parentId": "a",
+                        "created": 1576492959.37,
+                        "createdBy": "ck48ave6400c51ed33xxwzz0r",
+                        "modified": 1576492959.37,
+                        "modifiedBy": "ck48ave6400c51ed33xxwzz0r",
+                        "id": "c",
+                        "children": []
+                    }
+                ]
+            },
+            {
+                "name": "A",
+                "created": 1576492959.476,
+                "createdBy": "ck48ax1gl00c61gd3qnzrxu0j",
+                "modified": 1576492959.476,
+                "modifiedBy": "ck48ax1gl00c61gd3qnzrxu0j",
+                "id": "a",
+                "children": [
+                    {
+                        "name": "C",
+                        "parentId": "a",
+                        "created": 1576492959.483,
+                        "createdBy": "ck48ax1gl00c61gd3qnzrxu0j",
+                        "modified": 1576492959.483,
+                        "modifiedBy": "ck48ax1gl00c61gd3qnzrxu0j",
+                        "id": "c",
+                        "children": [
+                            {
+                                "name": "D",
+                                "parentId": "c",
+                                "created": 1576493029.928,
+                                "createdBy": "ck48ax1gl00c61gd3qnzrxu0j",
+                                "modified": 1576493029.928,
+                                "modifiedBy": "ck48ax1gl00c61gd3qnzrxu0j",
+                                "id": "d",
+                                "children": []
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "time": 1580290946.305,
+        "tags": [],
+        "created": 1580290946.305,
+        "createdBy": "ck5h1b5mx00jg1fd3a0qj8wml",
+        "modified": 1580290946.305,
+        "modifiedBy": "ck5h1b5mx00jg1fd3a0qj8wml",
+        "id": "ck5z4fe2p000n1hd3bco30rnd"
+    },
+    "meta": {
+        "apiVersion": "1.4.26",
+        "serverTime": 1580290946.31,
+        "serial": "2019061301"
+    }
+}
